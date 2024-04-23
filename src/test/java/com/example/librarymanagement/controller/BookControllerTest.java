@@ -49,5 +49,4 @@ public class BookControllerTest {
                .andExpect(jsonPath("$[1].title", is("Book 2")));
     }
 
-    // Write similar tests for other controller methods like getBookById, createBook, updateBook, deleteBook, etc.
 }

@@ -36,8 +36,6 @@ public class BookServiceTest {
 
         // Assertions
         assertEquals(2, result.size());
-        // Add more assertions as needed
     }
 
-    // Write similar tests for other service methods like createBook, updateBook, deleteBook, etc.
 }

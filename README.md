@@ -1,88 +1,97 @@
-# Library Management Application
+#Library Management Application - Spring Boot
 
-This is a simple library management application developed using Spring Boot.
+## Getting Started:
+Clone the Repository:
 
-## Setup Instructions
+```bash
+git clone https://github.com/Anirudhxx/libraryManagement.git
+```
+Use code with caution.
+## Navigate to the Project:
 
-1. Clone the repository to your local machine:
+```bash
+cd library-management
+```
+Use code with caution.
 
-   git clone 'https://github.com/Anirudhxx/libraryManagement.git/
+## Prerequisites:
+Ensure you have Java and Maven installed on your system.
 
-2.  Navigate to the project directory:
-    cd library-management
-3. Make sure you have Java and Maven installed on your machine.
+## Build the Application:
+```bash
+mvn clean package
+````
+Use code with caution.
 
-4. Build the application using Maven:
-   mvn clean package
+## Running the Application:
 
-## Running the Application
+Start the Application:
+```bash
+java -jar library-management-0.0.1-SNAPSHOT.jar
+```
+Use code with caution.
 
-1. Once the build is successful, you can run the application using the following command:
+Verify Startup: Check the console for logs indicating successful application startup.
 
+## Sample API Requests:
 
-## Sample Requests
+1. Get All Books:
+Retrieve all books in the library using a GET request to:
+```bash
+GET /api/books
+````
+This request returns a JSON response containing a list of all available books.
 
-1. Get all books
+2. Get Book by ID:
+To get details of a specific book, send a GET request to:
+```bash
+GET /api/books/{id}
+```
+Replace {id} with the actual book ID. For example, to get details of book ID 1:
+```bash
+GET /api/books/1
+```
+This request returns a JSON response with details of the specified book or a 404 Not Found if the ID doesn't exist.
 
-To retrieve all books stored in the library, send a GET request to the following endpoint:
+3. Create a New Book:
+Create a new book by sending a POST request to:
+```bash
+POST /api/books
+Content-Type: application/json
+{
+"title": "Sample Book",
+"author": "John Doe",
+"publicationYear": 2022
+}
+````
 
-    bash
-    
-    GET /api/books
+Replace the example details with your desired book information. The response will be the newly created book's details in JSON format.
 
-This request will return a list of all books available in the library's catalog.
-2. Get a book by ID
-
-To retrieve a specific book from the library using its unique identifier (ID), send a GET request to the following endpoint, replacing {id} with the actual ID of the book:
-
-    bash
-    
-    GET /api/books/{id}
-    
-    For example, to get the details of a book with ID 1, the request would look like this:
-    
-    
-    bash
-
-    GET /api/books/1
-
-This request will return the details of the book with the specified ID if it exists in the library's catalog. If no book is found with the provided ID, the API will respond with a 404 Not Found status code.
-
-### 3. Create a new book
-
-    POST /api/books
-    Content-Type: application/json
-    
-    {
-    "title": "Sample Book",
-    "author": "John Doe",
-    "publicationYear": 2022
-    }
-
-
-
-### 4. Update a book
-
-    PUT /api/books/{id}
-    Content-Type: application/json
-    
-    {
+4. Update a Book:
+Update an existing book by sending a PUT request to:
+```bash
+PUT /api/books/{id}
+Content-Type: application/json
+{
     "title": "Updated Book Title",
     "author": "Jane Doe",
     "publicationYear": 2023
-    }
+}
+```
+Replace {id} with the book's ID and provide updated information in the JSON body. The response will be the updated book details.
 
+5. Delete a Book:
+Delete a book by sending a DELETE request to:
+```bash
+DELETE /api/books/{id}
+```
 
+Replace {id} with the book's ID. The response will be a success message upon deletion or an error message if the book doesn't exist.
 
-### 5. Delete a book
+## Testing:
 
-    DELETE /api/books/{id}
-    
-    
+Use tools like Postman or curl to test the API endpoints. Ensure the application is running before sending requests.
 
+Customization:
 
-## Testing
-
-You can also test the application using tools like Postman or curl. Make sure the application is running locally before sending requests.
-
-Feel free to customize this README file based on your specific application features and requirements.
+Feel free to modify this README to reflect your specific application features and requirements.
